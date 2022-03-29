@@ -1,5 +1,6 @@
 package de.tr7zw.nbtapi.plugin;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -7,6 +8,7 @@ import java.util.Map.Entry;
 import java.util.logging.Level;
 
 import org.bukkit.Bukkit;
+import org.bukkit.plugin.PluginDescriptionFile;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import de.tr7zw.changeme.nbtapi.NbtApiException;
@@ -42,6 +44,7 @@ import de.tr7zw.nbtapi.plugin.tests.tiles.TileTest;
 import de.tr7zw.nbtapi.plugin.tests.tiles.TilesCustomNBTPersistentTest;
 import de.tr7zw.nbtinjector.NBTInjector;
 import de.tr7zw.nbtapi.plugin.tests.items.ItemMergingTest;
+import org.bukkit.plugin.java.JavaPluginLoader;
 
 public class NBTAPI extends JavaPlugin {
 
@@ -52,6 +55,13 @@ public class NBTAPI extends JavaPlugin {
 
 	public static NBTAPI getInstance() {
 		return instance;
+	}
+	public NBTAPI() {
+		super();
+	}
+	protected NBTAPI(JavaPluginLoader loader, PluginDescriptionFile description, File dataFolder, File file)
+	{
+		super(loader, description, dataFolder, file);
 	}
 
 	@Override
