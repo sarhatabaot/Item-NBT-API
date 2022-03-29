@@ -105,9 +105,8 @@ public enum MinecraftVersion {
 			ver = Bukkit.getServer().getClass().getPackage().getName().split("\\.")[3];
 		} catch (ArrayIndexOutOfBoundsException e) {
 			//Some form of custom impl. Let's get the server version instead.
-			String bukkitVersion = Bukkit.getBukkitVersion().split("-")[0].replace(".","_");
-			String revision = Bukkit.getBukkitVersion().split("-")[1].replace("0.","");
-			ver = bukkitVersion+"_"+revision;
+			ver = Bukkit.getBukkitVersion().replace(".","_") + "_R1";
+
 		}
 		logger.info("[NBTAPI] Found Spigot: " + ver + "! Trying to find NMS support");
 		try {
